@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+def bail(msg)
+  puts msg
+  exit(1)
+end
+
+$:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
+
+require "helloh"
+
+directory = ARGV[0] || "./config/locales"
+
+helloh = Helloh.new
+helloh.files = Dir.glob(File.join(directory, "*.yml"))
+helloh.compare!
+
+status_code = 0
+
+helloh.results.each_pair do |file, errors|
+  if errors[:missing].any?
+    status_code = 1
+    puts "\nMissing keys in #{file}"
+    puts errors[:missing].map{ |key| "- #{key}" }
+  end
+end
+
+exit status_code

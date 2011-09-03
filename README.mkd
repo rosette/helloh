@@ -1,0 +1,31 @@
+# Helloh
+
+Helloh compares Rails localization files and looks for missing keys.
+
+## Installation
+
+You can install the gem as a standalone utility:
+
+    $ gem install helloh
+
+or include it in your `Gemfile`:
+
+    gem "helloh"
+
+## Usage
+
+If used without arguments, Helloh will look for files in a relative `./config/locales` directory.
+
+    $ helloh
+
+However, you can also use a path (where the localization files are) as the first argument:
+
+    $ helloh /path/to/my/rails/project/config/locales
+
+## Features
+
+It is still missing a lot of useful features. Like colored output. But its biggest feature would be to scan every file in a Rails project and check if every translation is defined in each localization file. That’s coming too.
+
+## License
+
+Helloh is © 2011 Rémi Prévost and may be freely distributed under the [LITL license](http://litl.info/). See the `LICENSE` file.
