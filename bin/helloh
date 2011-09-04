@@ -11,18 +11,7 @@ require "helloh"
 
 directory = ARGV[0] || "./config/locales"
 
-helloh = Helloh.new
+helloh = Helloh::Compare.new
 helloh.files = Dir.glob(File.join(directory, "*.yml"))
 helloh.compare!
-
-status_code = 0
-
-helloh.results.each_pair do |file, errors|
-  if errors[:missing].any?
-    status_code = 1
-    puts "\nMissing keys in #{file}"
-    puts errors[:missing].map{ |key| "- #{key}" }
-  end
-end
-
-exit status_code
+helloh.output_results!
