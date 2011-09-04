@@ -22,6 +22,10 @@ However, you can also use a path (where the localization files are) as the first
 
     $ helloh /path/to/my/rails/project/config/locales
 
+Another way to use Helloh is with a Rake task, when the gem is included in a Rails project `Gemfile`:
+
+    $ rake helloh:compare
+
 ## Features
 
 It is still missing a lot of useful features. Like colored output. But its biggest feature would be to scan every file in a Rails project and check if every translation is defined in each localization file. That’s coming too.
