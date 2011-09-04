@@ -6,9 +6,9 @@ module Helloh
   autoload :Compare, "helloh/compare"
   autoload :Railtie, "helloh/railtie"
 
-    def self.lang_from_filename(file) # {{{
-      file.match(/([^\/]+)\.yml$/)[1]
-    end # }}}
+  def self.lang_from_filename(file) # {{{
+    file.match(/([^\/]+)\.yml$/)[1]
+  end # }}}
 
 end
 
