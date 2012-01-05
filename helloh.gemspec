@@ -1,13 +1,17 @@
 spec = Gem::Specification.new do |s|
   s.name         = "helloh"
-  s.version      = "0.2"
+  s.version      = "0.2.1"
   s.platform     = Gem::Platform::RUBY
   s.authors      = "Rémi Prévost"
   s.email        = "remi@exomel.com"
   s.homepage     = "http://github.com/remiprev/helloh"
   s.summary      = "Helloh compares Rails l10n files"
   s.description  = "Helloh compares Rails localization files and looks for missing keys."
-  s.files        = Dir["lib/**/*.rb", "README.mkd", "LICENSE", "bin/*"]
+
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+
+  s.require_paths = ["lib"]
   s.require_path = "lib"
-  s.executables << "helloh"
 end

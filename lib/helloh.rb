@@ -1,7 +1,7 @@
 require "yaml"
 
 module Helloh
-  VERSION = "0.2"
+  VERSION = "0.2.1"
 
   autoload :Compare, "helloh/compare"
   autoload :Railtie, "helloh/railtie"
