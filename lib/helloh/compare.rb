@@ -1,7 +1,7 @@
 module Helloh
   class Compare
 
-    attr_accessor :files
+    attr_accessor :files, :ignore
     attr_reader :results
 
     def initialize # {{{
@@ -36,8 +36,9 @@ module Helloh
 
     def compare_yaml_hash(content1, content2, context = []) # {{{
       content1.each do |key, value|
-
         path = "#{(context+[key]).join(".")}"
+
+        next if @ignore.include?(path)
         unless content2.include?(key)
           @results[@other_file][:missing] << path unless @results[@other_file][:missing].include?(path)
           next
