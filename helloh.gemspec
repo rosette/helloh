@@ -1,6 +1,11 @@
+# encoding: utf-8
+
+$:.push File.expand_path("../lib", __FILE__)
+require "teamocil"
+
 spec = Gem::Specification.new do |s|
   s.name         = "helloh"
-  s.version      = "0.3"
+  s.version      = Helloh::VERSION
   s.platform     = Gem::Platform::RUBY
   s.authors      = "Rémi Prévost"
   s.email        = "remi@exomel.com"
