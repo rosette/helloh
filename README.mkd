@@ -28,4 +28,4 @@ It is still missing a lot of useful features. Like colored output. But its bigge
 
 ## License
 
-Helloh is © 2011 Rémi Prévost and may be freely distributed under the [LITL license](http://litl.info/). See the `LICENSE` file.
+Helloh is © 2011-2012 Rémi Prévost and may be freely distributed under the [MIT license](https://github.com/rosette/helloh/blob/master/LICENSE). See the `LICENSE` file.
