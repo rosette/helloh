@@ -4,7 +4,7 @@ spec = Gem::Specification.new do |s|
   s.platform     = Gem::Platform::RUBY
   s.authors      = "Rémi Prévost"
   s.email        = "remi@exomel.com"
-  s.homepage     = "http://github.com/remiprev/helloh"
+  s.homepage     = "http://github.com/rosette/helloh"
   s.summary      = "Helloh compares Rails l10n files"
   s.description  = "Helloh compares Rails localization files and looks for missing keys."
 
