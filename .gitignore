@@ -1,2 +1,7 @@
-.local.vimrc
 *.gem
+.rvmrc
+.local*
+.yardoc
+doc
+pkg
+Gemfile.lock
