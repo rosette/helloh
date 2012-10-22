@@ -19,4 +19,6 @@ spec = Gem::Specification.new do |s|
 
   s.require_paths = ["lib"]
   s.require_path = "lib"
+
+  s.add_development_dependency "rake", "~> 0.9.2"
 end
