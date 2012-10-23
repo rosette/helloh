@@ -1,19 +1,6 @@
 #!/usr/bin/env ruby
 
-def bail(msg)
-  puts msg
-  exit(1)
-end
-
 $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
-
 require "helloh"
 
-directory = ARGV[0] || "./config/locales"
-ignore = File.exists?(".hellohignore") ? File.read(".hellohignore").split(/\n|,/) : []
-
-helloh = Helloh::Compare.new
-helloh.files = Dir.glob(File.join(directory, "??.yml"))
-helloh.ignore = ignore
-helloh.compare!
-helloh.output_results!
+Helloh::CLI.new(ARGV)

@@ -1,15 +1,14 @@
 module Helloh
   class Compare
-
     attr_accessor :files, :ignore
     attr_reader :results
 
-    def initialize # {{{
+    def initialize
       @results = {}
       @files = []
-    end # }}}
+    end
 
-    def compare! # {{{
+    def compare!
       files.each do |file|
         @file = File.basename(file)
 
@@ -19,22 +18,20 @@ module Helloh
           @results[@other_file] ||= { :missing => [] }
           compare_yaml_hash(YAML.load_file(file)[Helloh.lang_from_filename(file)], YAML.load_file(other_file)[Helloh.lang_from_filename(other_file)])
         end
-
       end
-    end # }}}
+    end
 
-    def output_results! # {{{
+    def output_results!
       @results.each_pair do |file, errors|
         if errors[:missing].any?
           puts "\nMissing keys in #{file}"
           puts errors[:missing].map{ |key| "- #{key}" }
         end
       end
-    end # }}}
+    end
 
     private
-
-    def compare_yaml_hash(content1, content2, context = []) # {{{
+    def compare_yaml_hash(content1, content2, context = [])
       content1.each do |key, value|
         path = "#{(context+[key]).join(".")}"
 
@@ -49,7 +46,6 @@ module Helloh
           next
         end
       end
-    end # }}}
-
+    end
   end
 end
